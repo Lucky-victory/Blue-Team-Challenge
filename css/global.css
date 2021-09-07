@@ -10,6 +10,43 @@
 html{
   font-size: 16px;
 }
+
+.section{
+  text-align: center;
+  padding: 2rem 0;
+}
+.section--title{
+  display: inline-block;
+  position: relative;
+  background: #920B56;
+  color: #fff;
+  padding:1em 1.5em;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+.section--title:before{
+  content: "";
+  position: absolute;
+  top:0;
+  left: 0;
+  height: 100%;
+  width: 1em;
+  background-color: #000;
+}
+.section--title:after{
+  content: "";
+  position: absolute;
+  top:0;
+  right: 0;
+  height: 100%;
+  width: 1em;
+  background:linear-gradient(45deg,#000 33.3%,transparent 33.3%,#000 66.6%,transparent 66.6%,#000 88.8%,transparent 88.8%,),linear-gradient(-45deg,transparent 33.3%,#000 33.3%,transparent 66.6%,#000 66.6%,transparent  88.8%,#000 88.8%);
+  background-size: 30px 40px;
+  
+  /* background-size: 3px 5px; */
+  
+}
+  /* media queries */
 @media all and (max-width:400px) {
   html {
     font-size: 10px
