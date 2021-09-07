@@ -2,23 +2,25 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  padding: 2rem 1.5rem;
 }
 .testimonial{
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
   border-radius:2.5rem 2rem 2rem 2.5rem;
   padding:1.5rem 0.5rem;
   padding-left: 2rem;
   display: flex;
-  align-items: center;
-  box-shadow: 0 8px 14px #0002, 8px 0 14px #0002;
+  /* align-items: center; */
+  box-shadow: 0 8px 14px #0002, -8px 0 14px #0002;
   margin: 1rem auto;
+  flex-shrink: 0;
 }
 .testimonial__image-box{
   width: 7rem;
   height: 7rem;
   border-radius: 50%;
-  box-shadow: 0 10px 15px #0005,10px 0 15px #0002;
+  box-shadow: 0 10px 15px #0005,-10px 0 15px #0002;
   flex-shrink: 0;
   margin-left: -3rem;
 }
