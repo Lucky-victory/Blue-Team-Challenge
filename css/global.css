@@ -32,6 +32,7 @@ html{
   height: 100%;
   width: 1em;
   background-color: #000;
+  display: none;
 }
 .section--title:after{
   content: "";
@@ -39,9 +40,10 @@ html{
   top:0;
   right: 0;
   height: 100%;
-  width: 1em;
-  background:linear-gradient(45deg,#000 33.3%,transparent 33.3%,#000 66.6%,transparent 66.6%,#000 88.8%,transparent 88.8%,),linear-gradient(-45deg,transparent 33.3%,#000 33.3%,transparent 66.6%,#000 66.6%,transparent  88.8%,#000 88.8%);
-  background-size: 30px 40px;
+  width: 5em;
+  background:linear-gradient(-45deg,transparent 33.3%,#000 33.3%,#000 66.6%,transparent 66.6%),linear-gradient(45deg,transparent 33.3%,#000 33.3%,#000 66.6%,transparent 66.6%);
+  background-size: 20px 40px;
+  display: none;
   
   /* background-size: 3px 5px; */
   
