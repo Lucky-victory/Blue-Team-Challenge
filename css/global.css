@@ -6,6 +6,11 @@
   box-sizing: border-box;
   font-family: sans-serif;
   -webkit-tap-highlight-color: transparent;
+    -ms-overflow-style: none;
+
+}
+*::-webkit-scrollbar{
+  width: 0px;
 }
 html{
   font-size: 16px;
@@ -23,29 +28,22 @@ html{
   padding:1em 1.5em;
   text-transform: capitalize;
   margin-bottom: 1rem;
+  box-shadow: 0 10px 20px #0003, -10px 0 20px #0003;
+  border-radius: 0.5rem 0.5rem ;
+  overflow: hidden;
 }
-.section--title:before{
-  content: "";
-  position: absolute;
-  top:0;
-  left: 0;
-  height: 100%;
-  width: 1em;
-  background-color: #000;
-  display: none;
-}
+
 .section--title:after{
   content: "";
   position: absolute;
-  top:0;
+  bottom:0;
   right: 0;
-  height: 100%;
-  width: 5em;
-  background:linear-gradient(-45deg,transparent 33.3%,#000 33.3%,#000 66.6%,transparent 66.6%),linear-gradient(45deg,transparent 33.3%,#000 33.3%,#000 66.6%,transparent 66.6%);
-  background-size: 20px 40px;
-  display: none;
+  height: 0.875rem;
+  width: 100%;
+  background:linear-gradient(-45deg,transparent 33.3%,#fff 33.3%,#fff 66.6%,transparent 66.6%),linear-gradient(45deg,transparent 33.3%,#fff 33.3%,#fff 66.6%,transparent 66.6%);
+  background-size: 15px 30px;
   
-  /* background-size: 3px 5px; */
+  
   
 }
   /* media queries */
