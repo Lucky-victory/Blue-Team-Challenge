@@ -57,9 +57,6 @@ color: #03923A;
 .tab-control__icon{
   margin-right: 0.5em;
 }
-.tab-control:focus {
-  box-shadow: inset 0 0 0 2px #42575A;
-}
 
 /* menu tab controls style end*/
 
@@ -87,10 +84,9 @@ color: #03923A;
 }
 .tab-content.active--content{
   z-index: 2;
-  /* background: #920B56; */
   background: #fff;
   transform: translateX(0);
-  /* transform-origin: right; */
+  
 
 }
 
