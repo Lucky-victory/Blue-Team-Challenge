@@ -53,13 +53,12 @@ color: #03923A;
 
 .tab-control:hover {
   color: #03923A
-  
 }
 .tab-control__icon{
   margin-right: 0.5em;
 }
 .tab-control:focus {
-  /* box-shadow: inset 0 0 0 2px #42575A */
+  box-shadow: inset 0 0 0 2px #42575A;
 }
 
 /* menu tab controls style end*/
@@ -79,10 +78,10 @@ color: #03923A;
   width: 100%;
   height: 100%;
   overflow-y: auto;
-padding: 1rem;
-position: absolute;
-transition: 0.4s cubic-bezier(0.175, 0.585, 0.32, 1.275);
-transform: translateX(-100%);
+  padding: 1rem;
+  position: absolute;
+  transition: 0.4s cubic-bezier(0.175, 0.585, 0.32, 1.275);
+  transform: translateX(-100%);
 /* transform-style: preserve-3d; */
 /* transform-origin: left; */
 }

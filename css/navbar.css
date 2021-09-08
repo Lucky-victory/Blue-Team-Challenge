@@ -15,10 +15,12 @@
 }
 
 .navbar{
-    margin: 0 3em;
-    padding: 3em 0;
+    padding: 1.5em 3em;
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    background: rgba(255,255,255,0.2);
+    overflow: hidden;
 }
 
 .logo {
@@ -37,11 +39,24 @@
 }
 
 .nav-item {
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+    text-transform: capitalize;
     text-decoration: none;
+    color: rgb(37, 37, 37);
     margin-left: 1.5em;
-    font-size: 1.5em;
-    color: black
+    padding: 0.6em 1.2em;
+    border: 2px solid rgb(170, 170, 170);
+    background: transparent;
+    white-space: nowrap;
+    outline: none;
 }
+
+.nav-item:hover {
+    color: var(--mainColor);
+}
+
 
 .hero-title {
     margin: 3em 3em 0; 
@@ -52,6 +67,19 @@
     font-size: 4em;
     font-weight: 700;
     font-style: italic;
+    padding-top: 1em;
+    position: relative;
+}
+
+.hero-title h2:after {
+    content:'';
+    position: absolute;
+    width: 15%;
+    height: 18px;
+    top: 40px;
+    left: 3%;
+    background-color: var(--mainColor);
+    border-radius: 12px;
 }
 
 .hero-title .title-para {
@@ -59,6 +87,8 @@
     font-size: 1.3em;
     font-family: 'Libre Baskerville', serif;
     font-weight: bold;
+    font-style: italic;
     padding-top: 3em;
-    text-align: left;
+    line-height: 30px;
+    letter-spacing: 3px;
 }
