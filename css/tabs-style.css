@@ -38,6 +38,8 @@
 color: #666;
 /* flex: 1; */
 margin:0 0.5rem;
+display: flex;
+align-items: center;
 }
 
 .tab-control.active--tab {
@@ -50,10 +52,12 @@ color: #03923A;
 }
 
 .tab-control:hover {
-  background: ;
+  color: #03923A
   
 }
-
+.tab-control__icon{
+  margin-right: 0.5em;
+}
 .tab-control:focus {
   /* box-shadow: inset 0 0 0 2px #42575A */
 }
