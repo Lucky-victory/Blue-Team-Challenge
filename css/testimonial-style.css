@@ -11,7 +11,7 @@
   padding:2rem 1.5rem ;
   padding-left: 2rem;
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   box-shadow: 0 8px 14px #0002, -8px 0 14px #0002;
   margin: 1rem auto;
   flex-shrink: 0;
