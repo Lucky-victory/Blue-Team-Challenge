@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --mainColor: #920B56;
+    --secondColor: #fff;
+}
+
+.hero {
+    background-image: url(../images/backgroundimg.jpg);
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    height: 100vh;
+    margin-bottom: 3em;
+}
+
+.navbar{
+    margin: 0 3em;
+    padding: 3em 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+}
+
+.nav-list {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.nav-item {
+    text-decoration: none;
+    margin-left: 1.5em;
+    font-size: 1.5em;
+    color: black
+}
+
+.hero-title {
+    margin: 3em 3em 0; 
+}
+
+.hero-title h2 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 4em;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.hero-title .title-para {
+    width: 60%;
+    font-size: 1.3em;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: bold;
+    padding-top: 3em;
+    text-align: left;
+}
