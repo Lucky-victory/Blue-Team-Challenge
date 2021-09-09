@@ -49,11 +49,11 @@ align-items: center;
   color: white;
 box-shadow: 0 5px 15px #0004,
 inset 0 0 0 0.25rem currentColor;
-color: #03923A;
+color: #039456;
 }
 
 .tab-control:hover {
-  color: #03923A
+  color: #039456
 }
 .tab-control__icon{
   margin-right: 0.5em;
