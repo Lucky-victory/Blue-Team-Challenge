@@ -7,7 +7,8 @@ url("./flaticon.eot?94416057e5b962bf57e5607cc7c35e3e#iefix") format("embedded-op
 url("./flaticon.svg?94416057e5b962bf57e5607cc7c35e3e#flaticon") format("svg");
 }
 
-i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before,
+button[class^="flaticon-"]:before, button[class*=" flaticon-"]:before {
     font-family: flaticon !important;
     font-style: normal;
     font-weight: normal !important;
