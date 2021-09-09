@@ -1,3 +1,4 @@
+
 .playlist-section .section--title {
   background: #039456;
 }
@@ -5,15 +6,17 @@
 .playlist-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 97%;
   max-width: 1200px;
   margin: 1.5rem auto;
   border-radius: 0.875rem;
   background: #fff;
+  box-shadow: 0 10px 15px #0003,-10px 0 15px #0003;
 }
 
 .player {
   width: 100%;
+  max-width: 500px;
 }
 
 .player__image-box {
@@ -50,6 +53,7 @@
   padding: 1rem;
   max-width: 500px;
   margin: 1rem auto;
+  align-items: center;
 }
 
 .player__progress {
@@ -95,7 +99,10 @@
   border-radius: inherit;
 
 }
-
+.player__duration,.player__time-elasped{
+  display: inline-block;
+  margin: 0 1rem;
+}
 @media all and (min-width:800px) {
   .playlist-container {
     flex-direction: row;
