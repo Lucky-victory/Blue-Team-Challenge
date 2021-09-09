@@ -11,7 +11,9 @@ background: #039456;
   background: #fff;
 }
 
-
+.player{
+  width: 100%;
+}
 .player__image-box{
   width: 22rem;
   height: 22rem;
@@ -37,7 +39,39 @@ background: #039456;
   object-fit: cover;
   border-radius: inherit;
 }
-
+.player__progress-container{
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+}
+.player__progress{
+  flex:1;
+  height: 0.625rem;
+  background-color: #9443;
+  border-radius: 2rem;
+  position: relative;
+}
+.player__progress-fill{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: #439426;
+  z-index: 2;
+  top:0;
+  left: 0;
+}
+.player__progress-fill:before{
+  
+}
+.player__buffer-progress{
+  position:absolute;
+  background-color: #934;
+  width: 70%;
+    height: 100%;
+  top:0;
+  left: 0;
+  z-index: 1;
+}
 @media all and (min-width:800px){
   .playlist-container{
     flex-direction: row;
