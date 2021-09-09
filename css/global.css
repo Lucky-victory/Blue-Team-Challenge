@@ -22,6 +22,7 @@ html{
 .section{
   text-align: center;
   padding: 2rem 0;
+  width: 100%;
 }
 .section--title{
   display: inline-block;
