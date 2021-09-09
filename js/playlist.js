@@ -3,6 +3,7 @@ class Player {
     this.container = document.querySelector(container);
     this.player = new Audio();
     this.songData = songData;
+    this.songIndex=0;
     this.songs = [];
     
     this.container.innerHTML=`
@@ -35,7 +36,8 @@ class Player {
         </ul>
         </div>
 `;
-this.playerContainer=this.container.getElementById('player');
+this._loadSongs()
+this.playerContainer=this.container.querySelector('.player');
 this.playlistContainer=this.container.querySelector('.song-list');
 this.playerImage=this.container.querySelector('.player__image');
 this.playerTitle=this.container.querySelector('.player__title');
@@ -47,9 +49,9 @@ this.playerDuration=this.container.querySelector('.player__duration');
 this.playerTimeElasped=this.container.querySelector('.player__time-elasped');
 
 // controls 
-this.playPauseBtn=this.container.getElementById('play_pause_btn');
-this.prevBtn=this.container.getElementById('next_btn');
-this.nextBtn=this.container.getElementById('prev_btn');
+this.playPauseBtn=this.container.querySelector('#play_pause_btn');
+this.prevBtn=this.container.querySelector('#next_btn');
+this.nextBtn=this.container.querySelector('#prev_btn');
 
 
 // event listeners
@@ -141,11 +143,12 @@ seekPlayer(){
 onProgress(){
 
 }
-  _setActiveSong(song = {}) {
-    this.playerImage = song.cover;
-    this.playerTitle = song.title;
-    this.playerArtist = song.artist;
+  _setActiveSong(song) {
+    this.playerImage.src = song.cover;
+    this.playerTitle.textContent = song.title;
+    this.playerArtist.textContent = song.artist;
     this.player.src = song.url;
+    this.playlistContainer.querySelector(`.song-item[data-song-id="${song.id}"`).classList.add('active--song-item');
   }
   _updatePlaylist(songs) {
     for (const song of songs) {
@@ -166,9 +169,9 @@ onProgress(){
 
   }
   _updateActiveSong(song = {}) {
-    this.playerImage = song.cover;
-    this.playerTitle = song.title;
-    this.playerArtist = song.artist;
+    this.playerImage.src = song.cover;
+    this.playerTitle.textContent = song.title;
+    this.playerArtist.textContent = song.artist;
     this.player.src = song.url;
 
     this.playlistContainer.querySelector('.active--song-item').classList.remove('active--song-item');
@@ -188,4 +191,4 @@ onProgress(){
   </li>`)
   }
 }
-new Player('#playlist_container',[{}])
+new Player('#playlist_container','../music2.json')
