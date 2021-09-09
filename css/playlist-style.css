@@ -116,14 +116,18 @@
   left: 0;
   width: 100%;
   height: var(--song-list-header-mxh);
+  height: 80%;
   background-color:#fff;
   border-radius: 0.625rem 0.625rem 0 0;
   box-shadow: -5px 0 10px #0003;
   pointer-events: none;
+  z-index: 4;
+  transition: height 0.4s cubic-bezier(0.86, 0, 0.07, 1);
 }
 player.show--playlist .song-list-container{
   height: 80%;
   pointer-events: auto;
+    transition: height 0.4s cubic-bezier(0.86, 0, 0.07, 1);
 }
 .song-list-header{
   width: 100%;
@@ -132,7 +136,7 @@ player.show--playlist .song-list-container{
   text-align: center;
     font-size: 1.3rem;
     text-transform: uppercase;
-    
+    color: #666;
 padding: 0.875em;
 max-height: var(--song-list-header-mxh)
 }
@@ -141,6 +145,19 @@ max-height: var(--song-list-header-mxh)
   position: relative;
   display: inline-block;
   padding: 0.375em;
+  -webkit-tap-highlight-color: #9BA3F944;
+  cursor: pointer;
+}
+.song-list-header span:before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 0.25em;
+  border-radius: 1em;
+  background: #039456;
+  
 }
 .song-list{
 display: flex;
