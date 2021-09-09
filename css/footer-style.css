@@ -2,18 +2,23 @@
   background: #333;
   color: #fff;
   padding: 3rem 2rem;
-  display: flex;
+}
+.footer-inner-container{
+    display: flex;
   justify-content: space-around;
   align-items: center;
+
 }
 .footer a{
   text-decoration: none;
   color: inherit;
   cursor: pointer;
 }
-.quick-links-list{
-  
+.quick-links-list,.social-links-container{
+  list-style-type: none;
+  text-align: left;
 }
 .quick-link-item{
-  
+    border-bottom: 2px solid #034560;
+
 }
