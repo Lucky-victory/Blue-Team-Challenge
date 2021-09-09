@@ -1,0 +1,19 @@
+.footer{
+  background: #333;
+  color: #fff;
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer a{
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.quick-links-list{
+  
+}
+.quick-link-item{
+  
+}
