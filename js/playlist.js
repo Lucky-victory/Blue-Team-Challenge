@@ -3,16 +3,16 @@ class Player {
     this.container = document.querySelector(container);
     this.player = new Audio();
     this.songData = songData;
-    this.songIndex=0;
+    this.songIndex = 0;
     this.songs = [];
-    
-    this.container.innerHTML=`
+
+    this.container.innerHTML = `
             <div class="player">
           <div class="player__image-box">
-            <img src="./images/pexels-dellon-thomas-3394347.jpg" alt="" class="player__image">
+            <img src="" alt="" class="player__image">
           </div>
-          <div class="player__title">Give it all</div>
-          <div class="player__artist">john mario</div>
+          <div class="player__title"></div>
+          <div class="player__artist"></div>
           
           <div class="player__progress-container">
           <time class="player__time-elasped">--:--</time>
@@ -36,43 +36,43 @@ class Player {
         </ul>
         </div>
 `;
-this._loadSongs()
-this.playerContainer=this.container.querySelector('.player');
-this.playlistContainer=this.container.querySelector('.song-list');
-this.playerImage=this.container.querySelector('.player__image');
-this.playerTitle=this.container.querySelector('.player__title');
-this.playerArtist=this.container.querySelector('.player__artist');
-this.playerProgress=this.container.querySelector('.player__progress');
-this.playerProgressFill=this.container.querySelector('.player__progress-fill');
-this.playerBufferProgress=this.container.querySelector('.player__buffer-progress');
-this.playerDuration=this.container.querySelector('.player__duration');
-this.playerTimeElasped=this.container.querySelector('.player__time-elasped');
+    this._loadSongs()
+    this.playerContainer = this.container.querySelector('.player');
+    this.playlistContainer = this.container.querySelector('.song-list');
+    this.playerImage = this.container.querySelector('.player__image');
+    this.playerTitle = this.container.querySelector('.player__title');
+    this.playerArtist = this.container.querySelector('.player__artist');
+    this.playerProgress = this.container.querySelector('.player__progress');
+    this.playerProgressFill = this.container.querySelector('.player__progress-fill');
+    this.playerBufferProgress = this.container.querySelector('.player__buffer-progress');
+    this.playerDuration = this.container.querySelector('.player__duration');
+    this.playerTimeElasped = this.container.querySelector('.player__time-elasped');
 
-// controls 
-this.playPauseBtn=this.container.querySelector('#play_pause_btn');
-this.prevBtn=this.container.querySelector('#next_btn');
-this.nextBtn=this.container.querySelector('#prev_btn');
+    // controls 
+    this.playPauseBtn = this.container.querySelector('#play_pause_btn');
+    this.prevBtn = this.container.querySelector('#next_btn');
+    this.nextBtn = this.container.querySelector('#prev_btn');
 
 
-// event listeners
-this.playPauseBtn.addEventListener('click',()=>{
-  this.playPauseSong();
-});
-this.prevBtn.addEventListener('click',()=>{
-  this.prevSong();
-});
-this.nextBtn.addEventListener('click',()=>{
-  this.nextSong();
-});
-this.player.addEventListener('timeupdate',()=>{
-  this.onTimeUpdate();
-});
-this.player.addEventListener('loadedmetadata',()=>{
-  this.onMetaDataLoad();
-});
-this.player.addEventListener('progress',()=>{
-  this.onProgress();
-});
+    // event listeners
+    this.playPauseBtn.addEventListener('click', () => {
+      this.playPauseSong();
+    });
+    this.prevBtn.addEventListener('click', () => {
+      this.prevSong();
+    });
+    this.nextBtn.addEventListener('click', () => {
+      this.nextSong();
+    });
+    this.player.addEventListener('timeupdate', () => {
+      this.onTimeUpdate();
+    });
+    this.player.addEventListener('loadedmetadata', () => {
+      this.onMetaDataLoad();
+    });
+    this.player.addEventListener('progress', () => {
+      this.onProgress();
+    });
   }
 
   playPauseSong() {
@@ -95,7 +95,7 @@ this.player.addEventListener('progress',()=>{
   nextSong() {
     const SONGS = this.songs;
     this.songIndex += 1;
-    if (this.songIndex > SONGS.length - 1) {
+    if (this.songIndex >= SONGS.length - 1) {
       this.songIndex = 0;
     }
     this._updateActiveSong(this.songs[this.songIndex]);
@@ -122,27 +122,27 @@ this.player.addEventListener('progress',()=>{
     this._updatePlaylist(this.songs);
     this._setActiveSong(this.songs[this.songIndex]);
   }
-  onMetaDataLoad(){
-    const {duration} = this.player;
-    const MINUTES = Math.floor(duration/60);
-    let seconds = Math.floor(duration%60);
-    seconds < 10 ? '0'+seconds : seconds;
-this.playerDuration.textContent=`${MINUTES}:${seconds}`;
-}
-onTimeUpdate(){
-      const {currentTime,duration} = this.player;
-    const MINUTES = Math.floor(currentTime/60);
-    let seconds = Math.floor(currentTime%60);
-    seconds < 10 ? '0'+seconds : seconds;
-this.playerTimeElasped.textContent=`${MINUTES}:${seconds}`;
-this.playerProgressFill.style.width=(100/duration * currentTime)+'%';
-}
-seekPlayer(){
-  const {currentTime}=this.player
-}
-onProgress(){
+  onMetaDataLoad() {
+    const { duration } = this.player;
+    const MINUTES = Math.floor(duration / 60);
+    let seconds = Math.floor(duration % 60);
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    this.playerDuration.textContent = `${MINUTES}:${seconds}`;
+  }
+  onTimeUpdate() {
+    const { currentTime, duration } = this.player;
+    const MINUTES = Math.floor(currentTime / 60);
+    let seconds = Math.floor(currentTime % 60);
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    this.playerTimeElasped.textContent = `${MINUTES}:${seconds}`;
+    this.playerProgressFill.style.width = (100 / duration * currentTime) + '%';
+  }
+  seekPlayer() {
+    const { currentTime } = this.player
+  }
+  onProgress() {
 
-}
+  }
   _setActiveSong(song) {
     this.playerImage.src = song.cover;
     this.playerTitle.textContent = song.title;
@@ -156,19 +156,21 @@ onProgress(){
       this.playlistContainer.innerHTML += this._createHTMLList({ id: song.id, cover: song.cover, artist: song.artist, url: song.url, title: song.title })
     }
     this.playListItems = this.playlistContainer.querySelectorAll('.song-item');
-    this.playListItems.forEach(function(playListItem, index) {
-      playListItem.addEventListener('click', function() {
-        const PLAYLIST_ITEM_ID = playListItem.songId;
-        const SONG = this.songs.find(function(song) {
-          return song.id === PLAYLIST_ITEM_ID;
-          this._updateActiveSong(SONG);
-          this.songIndex = index;
+    this.playListItems.forEach((playListItem, index) =>{
+      playListItem.addEventListener('click', () => {
+        const PLAYLIST_ITEM_ID = playListItem.dataset.songId;
+        const SONG = songs.find((song) => {
+          return song.id == PLAYLIST_ITEM_ID;
         });
+        
+        this._updateActiveSong(SONG);
+        this.songIndex = index;
+
       });
     });
 
   }
-  _updateActiveSong(song = {}) {
+  _updateActiveSong(song) {
     this.playerImage.src = song.cover;
     this.playerTitle.textContent = song.title;
     this.playerArtist.textContent = song.artist;
@@ -191,4 +193,4 @@ onProgress(){
   </li>`)
   }
 }
-new Player('#playlist_container','../music2.json')
+new Player('#playlist_container', '../music2.json')
