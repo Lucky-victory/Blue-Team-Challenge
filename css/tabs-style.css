@@ -39,26 +39,24 @@ color: #666;
 /* flex: 1; */
 margin:0 0.5rem;
 display: flex;
-justify-content: center;
+/* justify-content: center; */
+align-items: center;
+}
+.tab-control:hover {
+  color: #039456
 }
 
-.tab-control.active--tab {
+.tab-control.active--tab,.tab-control:focus {
   background: transparent;
   cursor: pointer;
   color: white;
 box-shadow: 0 5px 15px #0004,
 inset 0 0 0 0.25rem currentColor;
-color: #03923A;
+color: #039456;
 }
 
-.tab-control:hover {
-  color: #03923A
-}
 .tab-control__icon{
   margin-right: 0.5em;
-}
-.tab-control:focus {
-  box-shadow: inset 0 0 0 2px #42575A;
 }
 
 /* menu tab controls style end*/
@@ -87,10 +85,9 @@ color: #03923A;
 }
 .tab-content.active--content{
   z-index: 2;
-  /* background: #920B56; */
   background: #fff;
   transform: translateX(0);
-  /* transform-origin: right; */
+  
 
 }
 
