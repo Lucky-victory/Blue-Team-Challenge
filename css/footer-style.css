@@ -14,7 +14,7 @@
   color: inherit;
   cursor: pointer;
 }
-.quick-links-list,.social-links-container{
+.quick-links-list,.social-links-list{
   list-style-type: none;
   text-align: left;
 }
