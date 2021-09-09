@@ -3,24 +3,24 @@
     "id": 1,
     "title": "want me now more than ever",
     "artist": "Jimmy Hardwind",
-    "cover": "./me-blue-bg.jpg",
-    "url": "./JimmyHardwind-Want-Me.mp3"
+    "cover": "./images/pexels-emmy-e-2381069.jpg",
+    "url": "./songs/JimmyHardwind-Want-Me.mp3"
 },
 
   {
     "id": 2,
     "title": "Bad dancer",
     "artist": "Johnny Drille",
-    "cover": "./funnybaby.jpg",
-    "url": "./JohnnyDrille-Bad-Dancer.mp3"
+    "cover": "./images/pexels-kristina-paukshtite-1280364.jpg",
+    "url": "./songs/JohnnyDrille-Bad-Dancer.mp3"
 },
 
   {
     "id": 3,
     "title": "Dancing on my own",
     "artist": "Micheal",
-    "cover": "./ape.jpg",
-    "url": "./Dancing-On-My-Own.mp3"
+    "cover": "./images/pexels-teddy-joseph-2955375.jpg",
+    "url": "./songs/Dancing-On-My-Own.mp3"
 }
 
 ]
