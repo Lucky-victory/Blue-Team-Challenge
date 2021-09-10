@@ -39,6 +39,7 @@ class Player {
     this._loadSongs()
     this.playerContainer = this.container.querySelector('.player');
     this.playlistContainer = this.container.querySelector('.song-list');
+    this.songListHeader= this.container.querySelector('.song-list-header span');
     this.playerImage = this.container.querySelector('.player__image');
     this.playerTitle = this.container.querySelector('.player__title');
     this.playerArtist = this.container.querySelector('.player__artist');
@@ -50,8 +51,8 @@ class Player {
 
     // controls 
     this.playPauseBtn = this.container.querySelector('#play_pause_btn');
-    this.prevBtn = this.container.querySelector('#next_btn');
-    this.nextBtn = this.container.querySelector('#prev_btn');
+    this.prevBtn = this.container.querySelector('#prev_btn');
+    this.nextBtn = this.container.querySelector('#next_btn');
 
 
     // event listeners
@@ -64,6 +65,9 @@ class Player {
     this.nextBtn.addEventListener('click', () => {
       this.nextSong();
     });
+    this.songListHeader.addEventListener('click',()=>{
+      this._showMobilePlayist()
+    });
     this.player.addEventListener('timeupdate', () => {
       this.onTimeUpdate();
     });
@@ -73,6 +77,7 @@ class Player {
     this.player.addEventListener('progress', () => {
       this.onProgress();
     });
+    
   }
 
   playPauseSong() {
@@ -86,16 +91,19 @@ class Player {
   }
   playSong() {
     this.container.classList.add('playing');
+        this._classNameChanger(this.playPauseBtn,'player__control-btn flaticon-pause-button')
+
     this.player.play()
   }
   pauseSong() {
     this.container.classList.remove('playing');
+    this._classNameChanger(this.playPauseBtn,'player__control-btn flaticon-play-button')
     this.player.pause();
   }
   nextSong() {
     const SONGS = this.songs;
-    this.songIndex += 1;
-    if (this.songIndex >= SONGS.length - 1) {
+    this.songIndex+=1;
+    if (this.songIndex > SONGS.length - 1) {
       this.songIndex = 0;
     }
     this._updateActiveSong(this.songs[this.songIndex]);
@@ -103,7 +111,7 @@ class Player {
   }
   prevSong() {
     const SONGS = this.songs;
-    this.songIndex -= 1;
+    this.songIndex-=1;
     if (this.songIndex < 0) {
       this.songIndex = SONGS.length - 1;
     }
@@ -159,9 +167,8 @@ class Player {
     this.playListItems.forEach((playListItem, index) =>{
       playListItem.addEventListener('click', () => {
         const PLAYLIST_ITEM_ID = playListItem.dataset.songId;
-        const SONG = songs.find((song) => {
-          return song.id == PLAYLIST_ITEM_ID;
-        });
+        const SONG = songs.find((song) => song.id == PLAYLIST_ITEM_ID
+        );
         
         this._updateActiveSong(SONG);
         this.songIndex = index;
@@ -179,7 +186,9 @@ class Player {
     this.playlistContainer.querySelector('.active--song-item').classList.remove('active--song-item');
     this.playlistContainer.querySelector(`.song-item[data-song-id='${song.id}']`).classList.add('active--song-item');
   }
-
+_showMobilePlaylist(){
+  this.container.classList.toggle('show--playlist');
+}
   _createHTMLList({ id, cover, url, title, artist } = {}) {
     return (`<li class='song-item' data-song-id='${id}'>
   <div class='song-item__image-box'>
@@ -191,6 +200,9 @@ class Player {
   <span class='song-item__duration'>4:50</span>
   </div>
   </li>`)
+  }
+  _classNameChanger(elem,classname){
+    elem.className=classname;
   }
 }
 new Player('#playlist_container', '../music2.json')
