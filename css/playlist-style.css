@@ -179,13 +179,13 @@
   box-shadow: -5px 0 10px #0003;
   pointer-events: none;
   z-index: 4;
-  transition: height 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: height 0.4s ease-in-out;
 }
 
 .playlist-container.show--playlist .song-list-container {
   height: 80%;
   pointer-events: auto;
-  transition: height 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: height 0.4s ease-in-out;
 }
 
 .song-list-header {
