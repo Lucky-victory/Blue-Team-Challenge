@@ -66,7 +66,7 @@ class Player {
       this.nextSong();
     });
     this.songListHeader.addEventListener('click',()=>{
-      this._showMobilePlayist()
+      this._showMobilePlaylist()
     });
     this.player.addEventListener('timeupdate', () => {
       this.onTimeUpdate();
