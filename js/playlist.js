@@ -60,10 +60,14 @@ class Player {
       this.playPauseSong();
     });
     this.prevBtn.addEventListener('click', () => {
-      this.prevSong();
+            this.debounce(this.prevSong(),50)
+
+    });
+    this.playerProgress.addEventListener('click',(evt)=>{
+      this.seekPlayer(evt);
     });
     this.nextBtn.addEventListener('click', () => {
-      this.nextSong();
+      this.debounce(this.nextSong(),50)
     });
     this.songListHeader.addEventListener('click',()=>{
       this._showMobilePlaylist()
@@ -92,13 +96,13 @@ class Player {
   playSong() {
     this.container.classList.add('playing');
         this._classNameChanger(this.playPauseBtn,'player__control-btn flaticon-pause-button')
-
-    this.player.play()
+    
+this.debounce( this.player.play(),50)
   }
   pauseSong() {
     this.container.classList.remove('playing');
     this._classNameChanger(this.playPauseBtn,'player__control-btn flaticon-play-button')
-    this.player.pause();
+this.debounce( this.player.pause(),50)
   }
   nextSong() {
     const SONGS = this.songs;
@@ -107,7 +111,7 @@ class Player {
       this.songIndex = 0;
     }
     this._updateActiveSong(this.songs[this.songIndex]);
-
+this.playSong();
   }
   prevSong() {
     const SONGS = this.songs;
@@ -116,6 +120,7 @@ class Player {
       this.songIndex = SONGS.length - 1;
     }
     this._updateActiveSong(this.songs[this.songIndex]);
+    this.playSong();
   }
   async _loadSongs() {
 
@@ -145,10 +150,20 @@ class Player {
     this.playerTimeElasped.textContent = `${MINUTES}:${seconds}`;
     this.playerProgressFill.style.width = (100 / duration * currentTime) + '%';
   }
-  seekPlayer() {
-    const { currentTime } = this.player
+  seekPlayer(evt) {
+    const {offsetX } = evt;
+    const {clientWidth}= this.playerProgress;
+    const { duration } = this.player;
+    this.player.currentTime= ((offsetX / clientWidth) * duration);
   }
   onProgress() {
+    const { duration, buffered} = this.player;
+    if (duration > 0 ) {
+      for (let i = 0; i < buffered.length; i++) {
+        const BUFFERED_LENGTH = (buffered.end(buffered.length - 1 - i))
+        this.playerBufferProgress.style.width = ((BUFFERED_LENGTH / duration) * 100) + '%';
+      }
+    }
 
   }
   _setActiveSong(song) {
@@ -172,7 +187,7 @@ class Player {
         
         this._updateActiveSong(SONG);
         this.songIndex = index;
-
+this.playSong();
       });
     });
 
@@ -204,5 +219,27 @@ _showMobilePlaylist(){
   _classNameChanger(elem,classname){
     elem.className=classname;
   }
+  debounce(func, wait, immediate) {
+    var timeout;
+  
+    return function executedFunction() {
+      var context = this;
+      var args = arguments;
+  
+      var later = function() {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+  
+      var callNow = immediate && !timeout;
+  
+      clearTimeout(timeout);
+  
+      timeout = setTimeout(later, wait);
+  
+      if (callNow) func.apply(context, args);
+    };
+  }
+
 }
 new Player('#playlist_container', '../music2.json')
