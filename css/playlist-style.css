@@ -115,7 +115,7 @@
 .player__progress {
   flex: 1;
   height: 0.5rem;
-  background-color: #9443;
+  background-color: #9442;
   border-radius: 3rem;
   position: relative;
   cursor: pointer;
@@ -150,7 +150,7 @@
 }
 .player__buffer-progress {
   position: absolute;
-  background-color: #934;
+  background-color: #9444;
   width: 0%;
   height: 100%;
   top: 0;
