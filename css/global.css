@@ -14,6 +14,8 @@
 }
 html{
   font-size: 16px;
+  --primary-color:#920B56;
+  --secondary-color:
 }
 .main-wrapper{
   max-width: 1700px;
@@ -28,7 +30,7 @@ html{
 .section--title{
   display: inline-block;
   position: relative;
-  background: #920B56;
+  background: var(--primary-color);
   color: #fff;
   padding:1em 1.5em;
   text-transform: capitalize;
