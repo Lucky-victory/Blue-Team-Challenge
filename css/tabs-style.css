@@ -43,7 +43,7 @@ display: flex;
 align-items: center;
 }
 .tab-control:hover {
-  color: #039456
+  color: var(--primary-color)
 }
 
 .tab-control.active--tab,.tab-control:focus {
@@ -52,7 +52,7 @@ align-items: center;
   color: white;
 box-shadow: 0 5px 15px #0004,
 inset 0 0 0 0.25rem currentColor;
-color: #039456;
+color:var(--primary-color);
 }
 
 .tab-control__icon{
@@ -80,8 +80,7 @@ color: #039456;
   position: absolute;
   transition: 0.4s cubic-bezier(0.175, 0.585, 0.32, 1.275);
   transform: translateX(-100%);
-/* transform-style: preserve-3d; */
-/* transform-origin: left; */
+
 }
 .tab-content.active--content{
   z-index: 2;
