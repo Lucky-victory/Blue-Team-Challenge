@@ -16,43 +16,90 @@
   <link rel="stylesheet" href="./css/uicons-solid-rounded.css">
   <link rel="stylesheet" href="./css/flaticon.css">
   <link rel="stylesheet" href="./css/navbar.css">
+  <link rel="stylesheet" href="./css/about-style.css">
   <link rel="stylesheet" href="./css/booking-style.css">
   <link rel="stylesheet" href="./css/playlist-style.css">
   <link rel="stylesheet" href="./css/footer-style.css">
 </head>
 
 <body>
+  <div class="main-wrapper">
     <!--Navbar & Home Page start here-->
-  <!-- <section class="hero">
-    <header class="navbar">
-      <a href="index.html" class="logo" id="logo">Parkinsons</a>
+    <header class="header navbar">
+      <h1 class="logo">
+        <a href="/" >Chef Tom</a>
+      </h1>
       <nav class="nav">
         <ul class="nav-list">
-          <li><a href="#" class="nav-item">Menu</a></li>
-          <li><a href="#" class="nav-item">About</a></li>
-          <li><a href="#" class="nav-item">Calendar</a></li>
-          <li><a href="#" class="nav-item">Reservation</a></li>
+          <li class="nav-item"><a href="#about" >About</a></li>
+          <li class="nav-item"><a href="#skills" >Skills</a></li>
+          <li class="nav-item"><a href="#playlist">playlist</a></li>
+          <li class="nav-item"><a href="#booking" >Booking</a></li>
         </ul>
       </nav>
+      <button class="nav-control" aria-label="toggle navigation"><span></span><span></span></button>
     </header>
-    <div class="hero-title">
-      <h2>Cook with Us</h2>
-      <p class="title-para">When I push open the kitchen doors, I want to see a dining room full of diners, but especially brown and black diners, who, looking at their plates, feel seen, celebrated, and recognized. And when I look in the mirror, I want to see a young black chef who made that world a reality</p>
-    </div>
-  </section> -->
-
-
-  <div class="main-wrapper">
-    
-    <section class="section booking-section">
+    <section class="hero-section">
+      <div class="intro-container">
+        <div class="intro__content">
+          <h2><span class="fancy--bg">Hello</span><br /> I'm Tom Harris</h2>
+          <p class="title-para">I bring delicious and nutricious meals to your table, so you can live healthy.</p>
+        </div>
+        <div class="intro__image-box">
+          <img src="./images/image-cheerful-young-cook-uniform-standing-isolated-grey-wall_adobespark.png" alt="tom harris" class="intro__image">
+        </div>
+      </div>
+    </section>
+    <section class="section about-section" id="about">
+      <div class="about-container">
+        <div class="about__content">
+          <h2 class="about__content-title section--title">
+            about me
+          </h2>
+          <p> I feel like a Prince with a knife, I've wanted to be an Iron chef forever.</p><br>
+          
+          <p>I've been a cook all my life, I'm always learning new techniques and always improving beyond my own knowledge because there's always something new to learn amd new horizons to discover.</p>
+        </div>
+        <div class="about__image-box">
+          <img src="./images/portrait-handsome-male-chef-dressed-uniform_adobespark.png" alt="tom harris" class="about__image">
+        </div>
+      </div>
+    </section>
+    <section class="section booking-section" id="booking">
       <h2 class="section--title">Book a date </h2>
       <p class="section--desc">why not book a date with me? a trial would convince you.</p>
-   <div class="booking-container">
-     
-   </div>
+      <div class="booking-container">
+        <div class="booking__image-box">
+          <img src="./images/smiling-young-cook-uniform-pointing_adobespark.png" alt="" class="booking__image">
+        </div>
+        <div class="booking__content">
+          <form class="booking__form">
+            <div class="input--control">
+              <label for="full-name">Full name</label>
+              <input type="text" id="full-name" placeholder="Full name">
+            </div>
+            <div class="input--control">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Email address">
+            </div>
+            <div class="input--control">
+              <label for="guest">#of Guest</label>
+              <input type="number" id="guest" placeholder="No. of guest">
+            </div>
+            <div class="input--control">
+              <label for="booking-type">Booking Type</label>
+              <select id="booking-type">
+                <option value="none" selected>Please select</option>
+                <option value="house warming">House warming</option>
+                <option value=""></option>
+              </select>
+            </div>
+            <button class="submit-btn">book now</button>
+          </form>
+        </div>
+      </div>
     </section>
-    
-    <section class="section menu-section">
+    <section class="section menu-section" id="skills">
       <h2 class="section--title">My Skills</h2>
       <p class="section--desc">My culinary skills includes making the following..</p>
       <div class="tabs-container">
@@ -82,7 +129,7 @@
                   <img src="./images/pineapple-pizza.jpg" alt="" class="menu__image">
                 </div>
                 <h3 class="menu__title">
-                pineapple pizza
+                  pineapple pizza
                 </h3>
                 <!-- <div class="menu__price-container">
                   <span class="menu__price">$60 </span> <span class="menu__price-small-title">per box</span>
@@ -119,7 +166,7 @@
                   <img src="./images/cake-1.jpg" alt="" class="menu__image">
                 </div>
                 <h3 class="menu__title">
-                ceremonial cake
+                  ceremonial cake
                 </h3>
                 <!-- <div class="menu__price-container">
                   <span class="menu__price">$670 </span> <span class="menu__price-small-title">per box</span>
@@ -178,7 +225,7 @@
                   <img src="./images/noodles-4.jpg" alt="" class="menu__image">
                 </div>
                 <h3 class="menu__title">
-              alfredo  Pasta 
+                  alfredo Pasta
                 </h3>
                 <!-- <div class="menu__price-container">
                   <span class="menu__price">$90 </span> <span class="menu__price-small-title">per serving</span>
@@ -221,7 +268,7 @@
                   <span class="menu__price">$55 </span> <span class="menu__price-small-title">per serving</span>
                 </div> -->
               </div>
-                            <div class="menu">
+              <div class="menu">
                 <div class="menu__image-box">
                   <img src="./images/salad-4.jpg" alt="" class="menu__image">
                 </div>
@@ -232,10 +279,8 @@
                   <span class="menu__price">$28 </span> <span class="menu__price-small-title">per serving</span>
                 </div> -->
               </div>
-
             </div>
-            </div>
-          
+          </div>
           <div class="tab-content">
             <div class="menus-container">
               <div class="menu">
@@ -266,7 +311,7 @@
                   <img src="./images/burger-2.jpg" alt="" class="menu__image">
                 </div>
                 <h3 class="menu__title">
-                   beef burger
+                  beef burger
                 </h3>
                 <!-- <div class="menu__price-container">
                   <span class="menu__price">$60 </span> <span class="menu__price-small-title">per serving</span>
@@ -288,12 +333,10 @@
         </div>
       </div>
     </section>
-    
-    <section class="section playlist-section">
+    <section class="section playlist-section" id="playlist">
       <h2 class="section--title">my favorite playlist</h2>
       <p class="section--desc">while you wait, why not listen to my favs? 🙄</p>
       <div class="playlist-container" id="playlist_container">
-        
       </div>
     </section>
     <section class="section testimonials-section">
@@ -302,68 +345,64 @@
         <div class="testimonial">
           <div class="testimonial__image-box">
             <img src="./images/pexels-mentatdgt-937483.jpg" alt="" class="testimonial__image"></div>
-<div class="testimonial__content">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque laudantium voluptatem animi facilis, quos quas quam impedit natus molestias!</p>
-    <strong class="testimonial__content-author">Loveth Chan</strong><br>
-  <span class="testimonial__content-author-info">CEO - Kitchenlala</span>
-
-</div>    
-            
-</div>
+          <div class="testimonial__content">
+            <p>If Tom is my kitchen, then i have nothing to worry about, his meals are superb.</p>
+            <strong class="testimonial__content-author">Loveth Chan</strong><br>
+            <span class="testimonial__content-author-info">CEO - Kitchenlala</span>
+          </div>
+        </div>
         <div class="testimonial">
           <div class="testimonial__image-box">
-            <img src="./images/pexels-dellon-thomas-3394347.jpg" alt="" class="testimonial__image"/> </div>
-<div class="testimonial__content">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At culpa pariatur, neque maxime illo? Nobis minus labore libero, neque ducimus.</p>
-  <strong class="testimonial__content-author">Mike Godfrey </strong><br>
-  <span class="testimonial__content-author-info">Co-worker - KFC</span>
-</div>
+            <img src="./images/pexels-dellon-thomas-3394347.jpg" alt="" class="testimonial__image" /> </div>
+          <div class="testimonial__content">
+            <p> i learnt a lot while working with him, his kitchen technics are top notch, hygiene is first priority. </p>
+            <strong class="testimonial__content-author">Mike Godfrey </strong><br>
+            <span class="testimonial__content-author-info">Co-worker - KFC</span>
+          </div>
         </div>
-                <div class="testimonial">
+        <div class="testimonial">
           <div class="testimonial__image-box">
-            <img src="./images/pexels-teddy-joseph-2955375.jpg" alt="" class="testimonial__image"></div>  
-            <div class="testimonial__content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique voluptatum, ducimus ipsa quod fugiat! Rerum repudiandae libero, quam aut quos!</p>
-                <strong class="testimonial__content-author">William Osborn </strong><br>
-  <span class="testimonial__content-author-info">Product Designer - Zee Links</span>
-
-            </div>
+            <img src="./images/pexels-teddy-joseph-2955375.jpg" alt="" class="testimonial__image"></div>
+          <div class="testimonial__content">
+            <p>Once you have a taste of his meals, you're definitely gonna ask for more.</p>
+            <strong class="testimonial__content-author">William Osborn </strong><br>
+            <span class="testimonial__content-author-info">Product Designer - Zee Links</span>
+          </div>
         </div>
-
         <div class="testimonial">
           <div class="testimonial__image-box">
             <img src="./images/pexels-emmy-e-2381069.jpg" alt="" class="testimonial__image"></div>
-<div class="testimonial__content">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, placeat quis! Laudantium magnam, voluptates minus aliquid. Tenetur consequatur illo similique.</p>
-    <strong class="testimonial__content-author">Jane Talma</strong><br>
-  <span class="testimonial__content-author-info">Editor - New York Times</span>
-
-</div>
+          <div class="testimonial__content">
+            <p>Tom is the best chef i have ever known,he's always my first choice for any event type.</p>
+            <strong class="testimonial__content-author">Jane Talma</strong><br>
+            <span class="testimonial__content-author-info">Editor - New York Times</span>
+          </div>
         </div>
       </div>
     </section>
     <footer class="footer">
-      
-<div class="footer-inner-container">
+      <div class="footer-inner-container">
         <div class="quick-links-container">
-        <h4>quick links</h4>
-        <ul class="quick-links-list">
-          <li class="quick-link-item"><a href="#" class="a--link">Home</a></li>
-          <li class="quick-link-item"><a href="#" class="a--link">Menu</a></li>
-          <li class="quick-link-item"><a href="#" class="a--link">Bookings</a></li>
-          <li class="quick-link-item"><a href="#" class="a--link">About</a></li>
-        </ul>
+          <h2 class="footer--title">quick links</h2>
+          <ul class="quick-links-list">
+            <li class="quick-link-item"><a href="#" class="a--link">Home</a></li>
+            <li class="quick-link-item"><a href="#" class="a--link">Menu</a></li>
+            <li class="quick-link-item"><a href="#" class="a--link">Bookings</a></li>
+            <li class="quick-link-item"><a href="#" class="a--link">About</a></li>
+          </ul>
+        </div>
+        <div class="social-links-container">
+          <h2 class="footer--title">connect with Me</h2>
+          <ul class="social-links-list">
+            <li class="social-link-item"><a href="#" class="a--link">facebook</a></li>
+            <li class="social-link-item"><a href="#" class="a--link">twitter</a></li>
+            <li class="social-link-item"><a href="#" class="a--link">instagram</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="social-links-container">
-        <h4>connect with us</h4>
-        <ul class="social-links-list">
-          <li class="social-link-item"><a href="#" class="a--link">facebook</a></li>
-          <li class="social-link-item"><a href="#" class="a--link">twitter</a></li>
-          <li class="social-link-item"><a href="#" class="a--link">instagram</a></li>
-        </ul>
+      <div class="credits">
+      <p>Photos from <a href="https://pexels.com">pexels</a>, and <a href="https://freepik.com">freepik</a>, Quotes from <a href="https://brainyquote.com">Brainy Quotes</a>,and Icons from <a href="https://flaticon.com">flaticon</a></p>
       </div>
-
-</div>
     </footer>
   </div>
   <script src="./js/tabs.js"></script>
