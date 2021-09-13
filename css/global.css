@@ -15,17 +15,29 @@
 html{
   font-size: 16px;
   --primary-color: #039456;
+  /* --secondary-color:#934; */
   --secondary-color:#920B56;
+  --misc-color:#046C2C;
+  scroll-behavior: smooth;
+  scroll-padding-top: 3rem;
 }
 .main-wrapper{
-  max-width: 1700px;
+  max-width: 1500px;
   margin:0 auto;
+  position: relative;
 }
 .section{
   text-align: center;
   padding: 2rem 0;
   width: 100%;
   
+}
+img{
+  max-width: 100%;
+}
+a{
+  color: inherit;
+  text-decoration: none;
 }
 .section--title{
   display: inline-block;
@@ -51,6 +63,19 @@ html{
   background-size: 15px 30px;
   
   
+  
+}
+.section--desc{
+  margin: 2rem 0;
+  font-size: 1.3rem;
+  color: #555;
+  
+}
+.fancy--bg{
+  /* display: inline-block; */
+  position: relative;
+  background: var(--secondary-color);
+  padding: 0.25rem 1rem;
   
 }
   /* media queries */
