@@ -34,3 +34,7 @@
 .testimonial__content{
   padding: 1rem;
 }
+.testimonial__content-author{
+  margin-top: 1rem ;
+  display: inline-block;
+}
