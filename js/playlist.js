@@ -24,9 +24,9 @@ class Player {
           <time class="player__duration">--:--</time>
           </div>
           <div class="player__controls-container">
-            <button class="player__control-btn fi-rr-rewind" id="prev_btn"></button>
-            <button class="player__control-btn flaticon-play-button" id="play_pause_btn"></button>
-            <button class="player__control-btn fi-rr-forward" id="next_btn"></button>
+            <button class="player__control-btn fi-rr-rewind" id="prev_btn" aria-label='previous' title='previous'></button>
+            <button class="player__control-btn flaticon-play-button" id="play_pause_btn" title='play'></button>
+            <button class="player__control-btn fi-rr-forward" id="next_btn" aria-label='next' title='next'></button>
           </div>
         </div>
         <div class="song-list-container">
@@ -95,13 +95,13 @@ class Player {
   }
   playSong() {
     this.container.classList.add('playing');
-        this._classNameChanger(this.playPauseBtn,'player__control-btn flaticon-pause-button')
+        this._attributeChanger(this.playPauseBtn,'player__control-btn flaticon-pause-button','pause')
     
 this.debounce( this.player.play(),50)
   }
   pauseSong() {
     this.container.classList.remove('playing');
-    this._classNameChanger(this.playPauseBtn,'player__control-btn flaticon-play-button')
+    this._attributeChanger(this.playPauseBtn,'player__control-btn flaticon-play-button','play')
 this.debounce( this.player.pause(),50)
   }
   nextSong() {
@@ -190,7 +190,18 @@ this.playSong();
 this.playSong();
       });
     });
-
+const PLAYLIST_AUDIOS= this.playlistContainer.querySelectorAll('.song-item audio');
+PLAYLIST_AUDIOS.forEach((playlistAudio)=>{
+  playlistAudio.addEventListener('loadedmetadata',()=>{
+    const {duration}= playlistAudio;
+    const MINUTES=Math.floor(duration/60);
+    let seconds=Math.floor(duration%60);
+    seconds=seconds < 10 ? '0'+seconds : seconds;
+    playlistAudio.parentElement.querySelector('.song-item__duration').textContent=MINUTES +':'+seconds;
+    
+  });
+});
+    
   }
   _updateActiveSong(song) {
     this.playerImage.src = song.cover;
@@ -212,12 +223,14 @@ _showMobilePlaylist(){
   <strong class='song-item__title'>${title} </strong><br/>
   <span class='song-item__artist'>${artist}</span>
   <audio src='${url}'></audio>
-  <span class='song-item__duration'>4:50</span>
+  <span class='song-item__duration'>--:--</span>
   </div>
   </li>`)
   }
-  _classNameChanger(elem,classname){
+  _attributeChanger(elem,classname,title=''){
     elem.className=classname;
+    elem.title=title;
+    
   }
   debounce(func, wait, immediate) {
     var timeout;
