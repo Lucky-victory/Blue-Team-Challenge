@@ -1,0 +1,26 @@
+.about-container{
+  display: flex;
+  flex-direction: column;
+  max-width: 1300px;
+  margin: 2rem auto;
+}
+
+.about__content{
+  padding: 2rem;
+  max-width: 500px;
+  margin:0 auto;
+}
+.about__content p{
+  font-size: 1.3rem;
+  color: #222;
+}
+.about__image-box{
+  /* width: 25rem; */
+  
+}
+@media all and (min-width:800px){
+.about-container{
+  flex-direction: row;
+  
+}
+}

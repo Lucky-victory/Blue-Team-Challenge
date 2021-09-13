@@ -2,31 +2,40 @@
   background: #333;
   color: #fff;
   padding: 3rem 2rem;
+  text-align: center;
 }
 .footer-inner-container{
     display: flex;
   justify-content: space-around;
-  align-items: center;
+  /* align-items: center; */
 max-width: 900px;
 margin: 0 auto;
 }
-.footer a{
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
+.footer--title{
+  text-transform: capitalize;
+  margin-bottom: 1.5rem;
 }
 .quick-links-list,.social-links-list{
   list-style-type: none;
   text-align: left;
 }
-.quick-link-item{
-    border-bottom: 2px solid #034560;
+.quick-link-item,.social-link-item{
+    border-bottom: 2px solid var(--primary-color);
     margin: 1rem 0;
-padding: 0.5rem;
+padding: 0.25rem;
+cursor: pointer;
+text-transform: capitalize;
+}
+.quick-link-item:hover,.social-link-item:hover{
+  color: var(--primary-color)
 }
 .quick-link-item:focus{
-  outline: 1px dotted 
+  outline: 1px dotted var(--primary-color)
 }
-.quick-link-item:hover{
-  
+.credits{
+  margin: 1rem auto;
+}
+.credits a{
+  color: var(--primary-color);
+  font-weight: 500;
 }
