@@ -7,9 +7,9 @@
 }
 
 .about__content{
-  padding: 2rem 1rem;
-  max-width: 700px;
-  width:100%;
+  padding: 2rem 1.5rem;
+  max-width: 100%;
+  width:35rem;
   margin:0 auto;
 }
 .about__content p{
