@@ -20,22 +20,22 @@ margin: 0 auto;
   text-align: left;
 }
 .quick-link-item,.social-link-item{
-    border-bottom: 2px solid var(--primary-color);
+    border-bottom: 2px solid #08e25c;
     margin: 1rem 0;
 padding: 0.25rem;
 cursor: pointer;
 text-transform: capitalize;
 }
 .quick-link-item:hover,.social-link-item:hover{
-  color: var(--primary-color)
+  color: #08E25C;
 }
 .quick-link-item:focus{
-  outline: 1px dotted var(--primary-color)
+  outline: 1px dotted #08E25C
 }
 .credits{
   margin: 1rem auto;
 }
 .credits a{
-  color: var(--primary-color);
-  font-weight: 500;
+  color: #08E25C;
+  font-weight: 600;
 }
