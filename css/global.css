@@ -26,6 +26,9 @@ body{
 font-family: 'Fira Sans', sans-serif;
 
   }
+p,button,input,select{
+  font-family:inherit;
+  }
 .main-wrapper{
   max-width: 1500px;
   margin:0 auto;
@@ -75,6 +78,7 @@ a{
 .section--desc{
   margin: 2rem 0;
   font-size: 1.2rem;
+  font-weight:normal;
   color: #555;
   
 }
