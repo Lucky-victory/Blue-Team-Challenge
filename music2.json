@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "want me now more than ever",
+    "title": "want me",
     "artist": "Jimmy Hardwind",
     "cover": "./images/pexels-emmy-e-2381069.jpg",
     "url": "./songs/JimmyHardwind-Want-Me.mp3"
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "title": "Dancing on my own",
-    "artist": "Micheal",
+    "artist": "Calumn scott",
     "cover": "./images/pexels-teddy-joseph-2955375.jpg",
     "url": "./songs/Dancing-On-My-Own.mp3"
 }
